@@ -8,7 +8,7 @@ const defaultGridTemplate = `
 \usepackage{xcolor} 
 \usepackage{helvet}
 
-\pagecolor[rgb]{0,0,0} 
+\pagecolor[rgb]{100,100,100} 
 \color[rgb]{1,1,1}
  \renewcommand{\familydefault}{\sfdefault}
 
