@@ -168,7 +168,10 @@ func (g client) getPanelURL(p Panel, dashName string, t TimeRange) string {
 	values.Add("panelId", strconv.Itoa(p.Id))
 	values.Add("from", t.From)
 	values.Add("to", t.To)
-
+	
+	log.Println("Sleeping for 5s")
+	time.Sleep(5 * time.Second)
+	
 	if g.gridLayout {
 		width := int(p.GridPos.W * 40)
 		height := int(p.GridPos.H * 40)
@@ -195,6 +198,6 @@ func (g client) getPanelURL(p Panel, dashName string, t TimeRange) string {
 
 	url := g.getPanelEndpoint(dashName, values)
 	log.Println("Downloading image ", p.Id, url)
-	time.Sleep(5 * time.Second)
+	
 	return url
 }
