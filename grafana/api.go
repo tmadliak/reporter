@@ -118,7 +118,7 @@ func (g client) GetDashboard(dashName string) (Dashboard, error) {
 
 func (g client) GetPanelPng(p Panel, dashName string, t TimeRange) (io.ReadCloser, error) {
 	panelURL := g.getPanelURL(p, dashName, t)
-	time.Sleep(3 * time.Second)
+
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: !g.sslCheck},
 	}
