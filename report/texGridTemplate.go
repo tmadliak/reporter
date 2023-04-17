@@ -8,14 +8,18 @@ const defaultGridTemplate = `
 \usepackage{xcolor} 
 \usepackage{helvet}
 
-\pagecolor[rgb]{0,0,0} 
-\color[rgb]{1,1,1}
+
+\definecolor{background}{RGB}{25,27,30} 
+\definecolor{text}{RGB}{255,255,255} 
+
+\pagecolor{background}
+\color{text}
  \renewcommand{\familydefault}{\sfdefault}
 
 \graphicspath{ {images/} }
 \begin{document}
-\title{[[.Title]] [[if .VariableValues]] \\ \small [[.VariableValues]] [[end]] [[if .Description]] \\ \small [[.Description]] [[end]]}
-\date{[[.FromFormatted]]\\to\\[[.ToFormatted]]}
+\title{[[.Title]] [[if .VariableValues]] \\ \small Report variables:[[.VariableValues]] [[end]]}
+\date{Report period: [[.FromFormatted]] to [[.ToFormatted]]}
 \maketitle
 \begin{center}
 [[range .Panels]][[if .IsPartialWidth]]\begin{minipage}{[[.Width]]\textwidth}
